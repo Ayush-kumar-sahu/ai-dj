@@ -1,0 +1,35 @@
+[project]
+name = "ai-dj"
+version = "0.1.0"
+description = "AI DJ that auto-mixes a queue of EDM/House tracks using stem-aware transitions"
+requires-python = ">=3.10,<3.12"
+
+dependencies = [
+    "numpy>=1.24,<2.0",
+    "scipy>=1.11",
+    "soundfile>=0.12",
+    "librosa>=0.10",
+    "torch>=2.1",
+    "torchaudio>=2.1",
+    "demucs>=4.0",
+    "allin1>=1.1",
+    "click>=8.1",
+    "rich>=13.7",
+    "requests>=2.31",
+    "pydantic>=2.5",
+    "streamlit>=1.30",
+    "plotly>=5.18",
+]
+
+[project.optional-dependencies]
+key = ["essentia>=2.1b6.dev1110"]  # better key detection; librosa fallback works without it
+
+[project.scripts]
+aidj = "ai_dj.cli:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

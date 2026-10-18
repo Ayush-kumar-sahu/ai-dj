@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+data/cache/
+data/output/
+data/config.json
+data/songs/*
+!data/songs/.gitkeep
+*.wav
+*.mp3
+*.flac
+*.aiff
+.DS_Store
+
+# rendered sets: mixes, job logs and status (hundreds of MB)
+data/sets/
+
+# audio formats the app accepts beyond the ones above
+*.m4a
+*.ogg
+
+# partial downloads and atomic-write temp files
+*.part
+*.tmp
+
+# local tool settings and secrets
+.claude/settings.local.json
+.streamlit/secrets.toml
